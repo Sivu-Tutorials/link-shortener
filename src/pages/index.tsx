@@ -15,7 +15,7 @@ const IndexPage = () => {
   return (
     <Box d="flex" h="100vh" justifyContent="center" fontFamily="inter">
       <Head>
-        <title>link shortener by Daniel</title>
+        <title>Sivu link shortener</title>
       </Head>
       <Formik
         initialValues={{ slug: "", url: "" }}
@@ -31,7 +31,7 @@ const IndexPage = () => {
           ) {
             return toast({
               title: "invalid slug",
-              description: `slug can only contain alphanumeric values`,
+              description: `Slug can only contain alphanumeric values`,
               status: "error",
               duration: 9000,
               isClosable: true,
@@ -76,7 +76,7 @@ const IndexPage = () => {
 
           toast({
             title: "Link shortened",
-            description: `${values.url} has been shortened and is live at https://s.sivu.tk/${values.slug}.`,
+            description: `${values.url} has been shortened to the URL: https://s.sivu.tk/${values.slug}.`,
             status: "success",
             duration: 9000,
             isClosable: true,
@@ -86,24 +86,24 @@ const IndexPage = () => {
       >
         <Form>
           <Box w={{ sm: "90vw", lg: "50vw" }} mt={10}>
-            <Heading mb={4}>link shortener by Daniel</Heading>
+            <Heading mb={4}>Sivu link shortener</Heading>
             <Text mb={8}>
-              simply built using nextjs, redis and chakraui, hosted on vercel
+              Use this for personal work, or when adding links to the Sivu project!
             </Text>
             <Box mb={6}>
-              <FormLabel>link to shorten (full url)</FormLabel>
+              <FormLabel>Long link:</FormLabel>
               <Field
                 as={Input}
-                placeholder="ex: https://nextjs.org/docs"
+                placeholder="ex: https://github.com/Sivu-Tutorials/"
                 size="lg"
                 name="url"
               />
             </Box>
             <Box mb={6}>
-              <FormLabel>slug of shortened url</FormLabel>
+              <FormLabel>Slug of short link.</FormLabel>
               <Field
                 as={Input}
-                placeholder="ex: horseraddish"
+                placeholder="ex: website"
                 size="lg"
                 name="slug"
               />
